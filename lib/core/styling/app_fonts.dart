@@ -1,3 +1,3 @@
 class AppFonts{
-  static const mainFontName = "Urbanist";
+  static const String mainFontName = "Urbanist";
 }
