@@ -30,4 +30,10 @@ class AppStyles {
     fontSize: 12.sp,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle buttonTextStyle = TextStyle(
+    color: AppColors.whiteColor,
+    fontFamily: AppFonts.mainFontName,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w600,
+  );
 }
