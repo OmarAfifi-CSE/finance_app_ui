@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/styling/app_themes.dart';
+import 'core/widgets/primar_outlined_button_widget.dart';
 import 'core/widgets/primary_button_widget.dart';
 
 void main() {
@@ -22,13 +23,14 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const MyHomePage(title: 'Finance UI')
+      child: const MyHomePage(title: 'Finance UI'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
 
   @override
@@ -36,7 +38,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,10 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            PrimaryButtonWidget(
-              buttonText: "Login",
-                onPressed: (){
-                },
+            PrimaryButtonWidget(buttonText: "Login", onPressed: () {}),
+            SizedBox(height: 20.h),
+            PrimaryOutlinedButtonWidget(
+              buttonText: "Register",
+              onPressed: () {},
             ),
           ],
         ),
