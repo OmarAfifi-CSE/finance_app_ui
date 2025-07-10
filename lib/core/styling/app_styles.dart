@@ -6,7 +6,7 @@ import 'app_fonts.dart';
 
 class AppStyles {
   static TextStyle primaryHeadlineStyle = TextStyle(
-    color: AppColors.primaryColor,
+    color: AppColors.whiteColor,
     fontFamily: AppFonts.mainFontName,
     fontSize: 30.sp,
     fontWeight: FontWeight.bold,
@@ -35,5 +35,11 @@ class AppStyles {
     fontFamily: AppFonts.mainFontName,
     fontSize: 15.sp,
     fontWeight: FontWeight.w600,
+  );
+  static TextStyle textFieldTextStyle = TextStyle(
+    color: AppColors.secondaryColor,
+    fontFamily: AppFonts.mainFontName,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
   );
 }
