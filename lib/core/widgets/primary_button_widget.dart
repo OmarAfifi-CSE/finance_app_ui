@@ -15,7 +15,7 @@ class PrimaryButtonWidget extends StatelessWidget {
 
   const PrimaryButtonWidget({
     super.key,
-    this.buttonText,
+    required this.buttonText,
     this.buttonColor,
     this.width,
     this.height,

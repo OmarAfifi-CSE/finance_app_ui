@@ -15,7 +15,7 @@ class PrimaryOutlinedButtonWidget extends StatelessWidget {
 
   const PrimaryOutlinedButtonWidget({
     super.key,
-    this.buttonText,
+    required this.buttonText,
     this.buttonColor,
     this.width,
     this.height,
