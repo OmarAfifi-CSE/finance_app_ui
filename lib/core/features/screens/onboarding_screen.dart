@@ -24,9 +24,12 @@ class OnboardingScreen extends StatelessWidget {
               fit: BoxFit.fill,
             ),
             SizedBox(height: 21.h),
-            PrimaryButtonWidget(buttonText: "Login", onPressed: () {
-              GoRouter.of(context).pushNamed(AppRoutes.loginScreen);
-            }),
+            PrimaryButtonWidget(
+              buttonText: "Login",
+              onPressed: () {
+                GoRouter.of(context).pushNamed(AppRoutes.loginScreen);
+              },
+            ),
             SizedBox(height: 15.h),
             PrimaryOutlinedButtonWidget(
               buttonText: "Register",
@@ -34,7 +37,7 @@ class OnboardingScreen extends StatelessWidget {
             ),
             SizedBox(height: 46.h),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 // Handle guest login action
               },
               child: Text(

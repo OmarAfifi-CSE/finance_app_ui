@@ -2,7 +2,6 @@ import 'package:finance_app_ui/core/routing/router_generation_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'core/features/screens/onboarding_screen.dart';
 import 'core/styling/app_themes.dart';
 
 
