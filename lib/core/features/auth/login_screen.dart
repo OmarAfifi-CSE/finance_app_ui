@@ -87,12 +87,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 15.h),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: Text(
-                    "Forget Password?",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff6A707C),
+                  child: InkWell(
+                    onTap: () {
+                      GoRouter.of(
+                        context,
+                      ).pushNamed(AppRoutes.forgetPasswordScreen);
+                    },
+                    child: Text(
+                      "Forget Password?",
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff6A707C),
+                      ),
                     ),
                   ),
                 ),
