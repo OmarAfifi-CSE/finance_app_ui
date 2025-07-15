@@ -6,7 +6,7 @@ import 'app_fonts.dart';
 
 class AppStyles {
   static TextStyle primaryHeadlineStyle = TextStyle(
-    color: AppColors.whiteColor,
+    color: AppColors.primaryColor,
     fontFamily: AppFonts.mainFontName,
     fontSize: 30.sp,
     fontWeight: FontWeight.bold,

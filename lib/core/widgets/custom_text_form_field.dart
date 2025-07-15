@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../styling/app_colors.dart';
 import '../styling/app_styles.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextFormField extends StatelessWidget {
   final String? label;
   final String? hintText;
   final Widget? suffixIcon;
@@ -14,7 +14,7 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String? Function(String?)? validator;
 
-  const CustomTextField({
+  const CustomTextFormField({
     super.key,
     required this.label,
     required this.hintText,

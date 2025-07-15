@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 
 import '../../routing/app_routes.dart';
 import '../../styling/app_assets.dart';
-import '../../styling/app_styles.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -33,7 +32,9 @@ class OnboardingScreen extends StatelessWidget {
             SizedBox(height: 15.h),
             PrimaryOutlinedButtonWidget(
               buttonText: "Register",
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).pushNamed(AppRoutes.registerScreen);
+              },
             ),
             SizedBox(height: 46.h),
             GestureDetector(

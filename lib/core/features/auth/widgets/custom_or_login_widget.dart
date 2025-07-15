@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../styling/app_styles.dart';
 
 class CustomOrLoginWidget extends StatelessWidget {
-  const CustomOrLoginWidget({super.key});
+  final String orText;
+
+  const CustomOrLoginWidget({super.key, this.orText = "Or Login with"});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class CustomOrLoginWidget extends StatelessWidget {
         ),
         SizedBox(width: 12.w),
         Text(
-          "Or Login with",
+          orText,
           style: AppStyles.black16w600Style.copyWith(
             color: Color(0xff6A707C),
             fontSize: 14.sp,

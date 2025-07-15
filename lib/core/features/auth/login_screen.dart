@@ -1,13 +1,15 @@
-import 'package:finance_app_ui/core/features/auth/widgets/back_button_widget.dart';
-import 'package:finance_app_ui/core/features/auth/widgets/custom_donot_have_account.dart';
+import 'package:finance_app_ui/core/features/auth/widgets/custom_back_button_widget.dart';
+import 'package:finance_app_ui/core/features/auth/widgets/custom_rich_text.dart';
 import 'package:finance_app_ui/core/features/auth/widgets/custom_or_login_widget.dart';
 import 'package:finance_app_ui/core/features/auth/widgets/custom_social_login_buttons.dart';
 import 'package:finance_app_ui/core/styling/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../routing/app_routes.dart';
 import '../../styling/app_colors.dart';
-import '../../widgets/custom_text_field.dart';
+import '../../widgets/custom_text_form_field.dart';
 import '../../widgets/primary_button_widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -38,22 +40,21 @@ class _LoginScreenState extends State<LoginScreen> {
           key: formKey,
           child: SingleChildScrollView(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 56.h),
-                BackButtonWidget(),
+                CustomBackButtonWidget(),
                 SizedBox(height: 28.h),
                 SizedBox(
                   width: 280.w,
                   child: Text(
                     "Welcome back! Again!",
-                    style: AppStyles.primaryHeadlineStyle.copyWith(
-                      color: AppColors.primaryColor,
-                    ),
+                    style: AppStyles.primaryHeadlineStyle,
                   ),
                 ),
                 SizedBox(height: 32.h),
-                CustomTextField(
+                CustomTextFormField(
                   label: "Email",
                   hintText: "Enter your email",
                   controller: emailController,
@@ -65,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                 ),
                 SizedBox(height: 15.h),
-                CustomTextField(
+                CustomTextFormField(
                   label: "Password",
                   hintText: "Enter your password",
                   obscureText: true,
@@ -114,7 +115,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 22.h),
                 CustomSocialLoginButtons(),
                 SizedBox(height: 105.h),
-                CustomDonotHaveAccount(),
+                CustomRichText(
+                  onTap: () {
+                    GoRouter.of(
+                      context,
+                    ).pushReplacementNamed(AppRoutes.registerScreen);
+                  },
+                ),
               ],
             ),
           ),
