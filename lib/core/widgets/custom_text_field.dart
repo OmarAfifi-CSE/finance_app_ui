@@ -11,6 +11,7 @@ class CustomTextField extends StatelessWidget {
   final double? width;
   final double? height;
   final bool obscureText;
+  final TextEditingController? controller;
   final String? Function(String?)? validator;
 
   const CustomTextField({
@@ -21,6 +22,7 @@ class CustomTextField extends StatelessWidget {
     this.width,
     this.height,
     this.obscureText = false,
+    this.controller,
     this.validator,
   });
 
@@ -28,8 +30,10 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width ?? 331.w,
-      height: height ?? 56.h,
-      child: TextField(
+      child: TextFormField(
+        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
+        controller: controller,
+        validator: validator,
         cursorColor: AppColors.primaryColor,
         obscureText: obscureText,
         decoration: InputDecoration(
@@ -49,6 +53,10 @@ class CustomTextField extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.r),
             borderSide: BorderSide(color: Theme.of(context).primaryColor),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.r),
+            borderSide: BorderSide(color: Colors.red.shade400),
           ),
           suffixIcon: suffixIcon,
         ),
