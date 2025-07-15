@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../styling/app_colors.dart';
 import '../styling/app_styles.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   final String? label;
   final String? hintText;
   final Widget? suffixIcon;
@@ -27,18 +27,32 @@ class CustomTextFormField extends StatelessWidget {
   });
 
   @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  late bool _isObscured;
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize the internal state from the widget's property
+    _isObscured = widget.obscureText;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width ?? 331.w,
+      width: widget.width ?? 331.w,
       child: TextFormField(
-        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
-        controller: controller,
-        validator: validator,
+        style: TextStyle(fontSize: 16.sp),
+        controller: widget.controller,
+        validator: widget.validator,
         cursorColor: AppColors.primaryColor,
-        obscureText: obscureText,
+        obscureText: _isObscured,
         decoration: InputDecoration(
-          labelText: label,
-          hintText: hintText,
+          labelText: widget.label,
+          hintText: widget.hintText,
           hintStyle: AppStyles.textFieldTextStyle,
           filled: true,
           fillColor: AppColors.textFieldColor,
@@ -58,9 +72,25 @@ class CustomTextFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
             borderSide: BorderSide(color: Colors.red.shade400),
           ),
-          suffixIcon: suffixIcon,
+          suffixIcon: widget.obscureText
+              ? _buildPasswordIcon()
+              : widget.suffixIcon,
         ),
       ),
+    );
+  }
+
+  Widget _buildPasswordIcon() {
+    return IconButton(
+      icon: Icon(
+        _isObscured ? Icons.visibility_off : Icons.visibility,
+        color: AppColors.grayColor,
+      ),
+      onPressed: () {
+        setState(() {
+          _isObscured = !_isObscured;
+        });
+      },
     );
   }
 }

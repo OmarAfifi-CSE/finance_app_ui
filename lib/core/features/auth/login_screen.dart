@@ -34,11 +34,11 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 20.h),
-        child: Form(
-          key: formKey,
-          child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 20.h),
+          child: Form(
+            key: formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,10 +79,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     }
                     return null;
                   },
-                  suffixIcon: Icon(
-                    Icons.remove_red_eye,
-                    color: AppColors.grayColor,
-                  ),
                 ),
                 SizedBox(height: 15.h),
                 Align(
