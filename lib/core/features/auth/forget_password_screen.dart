@@ -72,13 +72,18 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     },
                   ),
                   SizedBox(height: 38.h),
-                  PrimaryButtonWidget(buttonText: 'Send Code',onPressed: (){
-                    if (formKey.currentState?.validate() ?? false) {
-                      // Handle the send code action
-                      // For example, you can navigate to the next screen
-                      GoRouter.of(context).pushNamed(AppRoutes.resetPasswordScreen);
-                    }
-                  },),
+                  PrimaryButtonWidget(
+                    buttonText: 'Send Code',
+                    onPressed: () {
+                      if (formKey.currentState?.validate() ?? false) {
+                        // Handle the send code action
+                        // For example, you can navigate to the next screen
+                        GoRouter.of(
+                          context,
+                        ).pushNamed(AppRoutes.otpVerificationScreen);
+                      }
+                    },
+                  ),
                   SizedBox(height: 300.h),
                   CustomRichText(
                     text: 'Remember Password? ',

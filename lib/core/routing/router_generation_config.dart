@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../features/auth/password_changed_screen.dart';
 import '../features/auth/register_screen.dart';
+import '../features/auth/verify_otp/otp_verification_screen.dart';
 import 'app_routes.dart';
 
 class RouterGenerationConfig {
@@ -41,6 +42,11 @@ class RouterGenerationConfig {
         path: AppRoutes.passwordChangedScreen,
         name: AppRoutes.passwordChangedScreen,
         builder: (context, state) => const PasswordChangedScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.otpVerificationScreen,
+        name: AppRoutes.otpVerificationScreen,
+        builder: (context, state) => const OtpVerificationScreen(),
       ),
     ],
   );
