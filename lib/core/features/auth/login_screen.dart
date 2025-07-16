@@ -34,98 +34,100 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 20.h),
-          child: Form(
-            key: formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 56.h),
-                CustomBackButtonWidget(),
-                SizedBox(height: 28.h),
-                SizedBox(
-                  width: 280.w,
-                  child: Text(
-                    "Welcome back! Again!",
-                    style: AppStyles.primaryHeadlineStyle,
-                  ),
-                ),
-                SizedBox(height: 32.h),
-                CustomTextFormField(
-                  label: "Email",
-                  hintText: "Enter your email",
-                  controller: emailController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Please enter your email";
-                    }
-                    return null;
-                  },
-                ),
-                SizedBox(height: 15.h),
-                CustomTextFormField(
-                  label: "Password",
-                  hintText: "Enter your password",
-                  obscureText: true,
-                  controller: passwordController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Please enter your email";
-                    } else if (value.length < 6) {
-                      return "Password must be at least 6 characters";
-                    }
-                    return null;
-                  },
-                ),
-                SizedBox(height: 15.h),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: InkWell(
-                    onTap: () {
-                      GoRouter.of(
-                        context,
-                      ).pushNamed(AppRoutes.forgetPasswordScreen);
-                    },
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 20.h),
+            child: Form(
+              key: formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 12.h),
+                  CustomBackButtonWidget(),
+                  SizedBox(height: 28.h),
+                  SizedBox(
+                    width: 280.w,
                     child: Text(
-                      "Forget Password?",
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff6A707C),
+                      "Welcome back! Again!",
+                      style: AppStyles.primaryHeadlineStyle,
+                    ),
+                  ),
+                  SizedBox(height: 32.h),
+                  CustomTextFormField(
+                    label: "Email",
+                    hintText: "Enter your email",
+                    controller: emailController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter your email";
+                      }
+                      return null;
+                    },
+                  ),
+                  SizedBox(height: 15.h),
+                  CustomTextFormField(
+                    label: "Password",
+                    hintText: "Enter your password",
+                    obscureText: true,
+                    controller: passwordController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter your email";
+                      } else if (value.length < 6) {
+                        return "Password must be at least 6 characters";
+                      }
+                      return null;
+                    },
+                  ),
+                  SizedBox(height: 15.h),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: InkWell(
+                      onTap: () {
+                        GoRouter.of(
+                          context,
+                        ).pushNamed(AppRoutes.forgetPasswordScreen);
+                      },
+                      child: Text(
+                        "Forget Password?",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff6A707C),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: 30.h),
-                PrimaryButtonWidget(
-                  buttonText: "Login",
-                  onPressed: () {
-                    if (formKey.currentState!.validate()) {
-                      // Handle login logic here
-                      print("Email: ${emailController.text}");
-                      print("Password: ${passwordController.text}");
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Login successful')),
-                      );
-                    }
-                  },
-                ),
-                SizedBox(height: 35.h),
-                CustomOrLoginWidget(),
-                SizedBox(height: 22.h),
-                CustomSocialLoginButtons(),
-                SizedBox(height: 105.h),
-                CustomRichText(
-                  onTap: () {
-                    GoRouter.of(
-                      context,
-                    ).pushReplacementNamed(AppRoutes.registerScreen);
-                  },
-                ),
-              ],
+                  SizedBox(height: 30.h),
+                  PrimaryButtonWidget(
+                    buttonText: "Login",
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        // Handle login logic here
+                        print("Email: ${emailController.text}");
+                        print("Password: ${passwordController.text}");
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Login successful')),
+                        );
+                      }
+                    },
+                  ),
+                  SizedBox(height: 35.h),
+                  CustomOrLoginWidget(),
+                  SizedBox(height: 22.h),
+                  CustomSocialLoginButtons(),
+                  SizedBox(height: 105.h),
+                  CustomRichText(
+                    onTap: () {
+                      GoRouter.of(
+                        context,
+                      ).pushReplacementNamed(AppRoutes.registerScreen);
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),

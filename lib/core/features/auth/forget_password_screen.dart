@@ -29,64 +29,66 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Form(
-          key: formKey,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 22.0, vertical: 20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: 56.0),
-                CustomBackButtonWidget(),
-                SizedBox(height: 28.0),
-                SizedBox(
-                  width: 331.w,
-                  child: Text(
-                    "Forgot Password?",
-                    style: AppStyles.primaryHeadlineStyle,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Form(
+            key: formKey,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 20.h),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 12.h),
+                  CustomBackButtonWidget(),
+                  SizedBox(height: 28.h),
+                  SizedBox(
+                    width: 331.w,
+                    child: Text(
+                      "Forgot Password?",
+                      style: AppStyles.primaryHeadlineStyle,
+                    ),
                   ),
-                ),
-                SizedBox(height: 10.0),
-                SizedBox(
-                  width: 331.w,
-                  child: Text(
-                    "Don't worry! It occurs. "
-                    "Please enter the email address linked with your account.",
-                    style: AppStyles.subtitlesStyle,
+                  SizedBox(height: 10.h),
+                  SizedBox(
+                    width: 331.w,
+                    child: Text(
+                      "Don't worry! It occurs. "
+                      "Please enter the email address linked with your account.",
+                      style: AppStyles.subtitlesStyle,
+                    ),
                   ),
-                ),
-                SizedBox(height: 32.h),
-                CustomTextFormField(
-                  label: 'Enter your email',
-                  hintText: 'Enter your email',
-                  controller: emailController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your email';
+                  SizedBox(height: 32.h),
+                  CustomTextFormField(
+                    label: 'Enter your email',
+                    hintText: 'Enter your email',
+                    controller: emailController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your email';
+                      }
+                      // Add more validation if needed
+                      return null;
+                    },
+                  ),
+                  SizedBox(height: 38.h),
+                  PrimaryButtonWidget(buttonText: 'Send Code',onPressed: (){
+                    if (formKey.currentState?.validate() ?? false) {
+                      // Handle the send code action
+                      // For example, you can navigate to the next screen
+                      GoRouter.of(context).pushNamed(AppRoutes.resetPasswordScreen);
                     }
-                    // Add more validation if needed
-                    return null;
-                  },
-                ),
-                SizedBox(height: 38.h),
-                PrimaryButtonWidget(buttonText: 'Send Code',onPressed: (){
-                  if (formKey.currentState?.validate() ?? false) {
-                    // Handle the send code action
-                    // For example, you can navigate to the next screen
-                    GoRouter.of(context).pushNamed(AppRoutes.resetPasswordScreen);
-                  }
-                },),
-                SizedBox(height: 361.h),
-                CustomRichText(
-                  text: 'Remember Password? ',
-                  onTapText: 'Login',
-                  onTap: () {
-                    GoRouter.of(context).pop();
-                  },
-                ),
-              ],
+                  },),
+                  SizedBox(height: 300.h),
+                  CustomRichText(
+                    text: 'Remember Password? ',
+                    onTapText: 'Login',
+                    onTap: () {
+                      GoRouter.of(context).pop();
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),

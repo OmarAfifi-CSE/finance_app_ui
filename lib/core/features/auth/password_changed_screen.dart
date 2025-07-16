@@ -12,42 +12,44 @@ class PasswordChangedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(height: 248.h),
-              Image.asset(AppAssets.rightCheckSticker, width: 100.w),
-              SizedBox(height: 35.h),
-              SizedBox(
-                width: 292.w,
-                child: Text(
-                  "Password Changed!",
-                  style: AppStyles.primaryHeadlineStyle.copyWith(
-                    fontSize: 26.sp,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(height: 204.h),
+                Image.asset(AppAssets.rightCheckSticker, width: 100.w),
+                SizedBox(height: 35.h),
+                SizedBox(
+                  width: 292.w,
+                  child: Text(
+                    "Password Changed!",
+                    style: AppStyles.primaryHeadlineStyle.copyWith(
+                      fontSize: 26.sp,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
-              ),
-              SizedBox(height: 8.h),
-              SizedBox(
-                width: 292.w,
-                child: Text(
-                  "Your password has been changed successfully.",
-                  style: AppStyles.subtitlesStyle,
-                  textAlign: TextAlign.center,
+                SizedBox(height: 8.h),
+                SizedBox(
+                  width: 292.w,
+                  child: Text(
+                    "Your password has been changed successfully.",
+                    style: AppStyles.subtitlesStyle,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-              ),
-              SizedBox(height: 40.h),
-              PrimaryButtonWidget(
-                buttonText: "Back to Login",
-                onPressed: () {
-                  GoRouter.of(context).pop();
-                  GoRouter.of(context).pop();
-                  GoRouter.of(context).pop();
-                },
-              ),
-            ],
+                SizedBox(height: 40.h),
+                PrimaryButtonWidget(
+                  buttonText: "Back to Login",
+                  onPressed: () {
+                    GoRouter.of(context).pop();
+                    GoRouter.of(context).pop();
+                    GoRouter.of(context).pop();
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
