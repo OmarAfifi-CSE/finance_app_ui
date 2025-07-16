@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../routing/app_routes.dart';
 import '../../styling/app_styles.dart';
 import '../../widgets/custom_text_form_field.dart';
 
@@ -74,6 +75,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   if (formKey.currentState?.validate() ?? false) {
                     // Handle the send code action
                     // For example, you can navigate to the next screen
+                    GoRouter.of(context).pushNamed(AppRoutes.resetPasswordScreen);
                   }
                 },),
                 SizedBox(height: 361.h),

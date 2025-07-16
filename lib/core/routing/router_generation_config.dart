@@ -1,3 +1,4 @@
+import 'package:finance_app_ui/core/features/auth/reset_password_screen.dart';
 import 'package:finance_app_ui/core/features/auth/forget_password_screen.dart';
 import 'package:finance_app_ui/core/features/auth/login_screen.dart';
 import 'package:finance_app_ui/core/features/screens/onboarding_screen.dart';
@@ -29,6 +30,11 @@ class RouterGenerationConfig {
         path: AppRoutes.forgetPasswordScreen,
         name: AppRoutes.forgetPasswordScreen,
         builder: (context, state) => const ForgetPasswordScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.resetPasswordScreen,
+        name: AppRoutes.resetPasswordScreen,
+        builder: (context, state) => const ResetPasswordScreen(),
       ),
     ],
   );
