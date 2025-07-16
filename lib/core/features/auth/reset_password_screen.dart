@@ -1,7 +1,9 @@
 import 'package:finance_app_ui/core/features/auth/widgets/custom_back_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../routing/app_routes.dart';
 import '../../styling/app_styles.dart';
 import '../../widgets/custom_text_form_field.dart';
 import '../../widgets/primary_button_widget.dart';
@@ -92,9 +94,14 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                       // Handle password creation logic here
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text('Password has been reset successfully!'),
+                          content: Text(
+                            'Password has been reset successfully!',
+                          ),
                         ),
                       );
+                      GoRouter.of(
+                        context,
+                      ).pushNamed(AppRoutes.passwordChangedScreen);
                     }
                   },
                 ),

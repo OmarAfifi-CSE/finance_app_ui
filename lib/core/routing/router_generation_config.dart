@@ -4,6 +4,7 @@ import 'package:finance_app_ui/core/features/auth/login_screen.dart';
 import 'package:finance_app_ui/core/features/screens/onboarding_screen.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/auth/password_changed_screen.dart';
 import '../features/auth/register_screen.dart';
 import 'app_routes.dart';
 
@@ -35,6 +36,11 @@ class RouterGenerationConfig {
         path: AppRoutes.resetPasswordScreen,
         name: AppRoutes.resetPasswordScreen,
         builder: (context, state) => const ResetPasswordScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.passwordChangedScreen,
+        name: AppRoutes.passwordChangedScreen,
+        builder: (context, state) => const PasswordChangedScreen(),
       ),
     ],
   );

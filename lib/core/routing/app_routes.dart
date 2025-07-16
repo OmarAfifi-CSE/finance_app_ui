@@ -5,4 +5,5 @@ class AppRoutes {
   static const String registerScreen = '/register';
   static const String forgetPasswordScreen = '/forget-password';
   static const String resetPasswordScreen = '/reset-password';
+  static const String passwordChangedScreen = '/password-changed-successfully';
 }
