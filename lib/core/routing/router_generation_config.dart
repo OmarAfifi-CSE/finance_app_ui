@@ -1,6 +1,7 @@
 import 'package:finance_app_ui/core/features/auth/reset_password_screen.dart';
 import 'package:finance_app_ui/core/features/auth/forget_password_screen.dart';
 import 'package:finance_app_ui/core/features/auth/login_screen.dart';
+import 'package:finance_app_ui/core/features/main_screen/main_screen.dart';
 import 'package:finance_app_ui/core/features/screens/onboarding_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -47,6 +48,11 @@ class RouterGenerationConfig {
         path: AppRoutes.otpVerificationScreen,
         name: AppRoutes.otpVerificationScreen,
         builder: (context, state) => const OtpVerificationScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.mainScreen,
+        name: AppRoutes.mainScreen,
+        builder: (context, state) => const MainScreen(),
       ),
     ],
   );

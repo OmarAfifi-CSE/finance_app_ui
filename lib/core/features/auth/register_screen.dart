@@ -128,7 +128,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         );
                         GoRouter.of(
                           context,
-                        ).pushReplacementNamed(AppRoutes.onboardingScreen);
+                        ).pushReplacementNamed(AppRoutes.loginScreen);
                       }
                     },
                   ),

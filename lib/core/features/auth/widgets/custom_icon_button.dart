@@ -8,6 +8,8 @@ class CustomIconButton extends StatelessWidget {
   final double? borderRadius;
   final void Function()? onPressed;
   final String iconPath;
+  final double? iconWidth;
+  final double? iconHeight;
 
   const CustomIconButton({
     super.key,
@@ -16,6 +18,8 @@ class CustomIconButton extends StatelessWidget {
     this.borderRadius,
     this.onPressed,
     required this.iconPath,
+    this.iconWidth,
+    this.iconHeight,
   });
 
   @override
@@ -30,7 +34,7 @@ class CustomIconButton extends StatelessWidget {
       ),
       child: Center(
         child: IconButton(
-          icon: SvgPicture.asset(iconPath, width: 26.w, height: 26.h),
+          icon: SvgPicture.asset(iconPath, width: iconWidth ?? 26.w, height: iconHeight ?? 26.h),
           onPressed: onPressed,
           color: Color(0xff202955),
         ),
