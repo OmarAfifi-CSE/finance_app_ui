@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../styling/app_assets.dart';
 import '../../styling/app_colors.dart';
+import 'my_cards.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -21,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     RegisterScreen(),
     LoginScreen(),
-    LoginScreen(),
+    MyCards(),
     LoginScreen(),
   ];
 

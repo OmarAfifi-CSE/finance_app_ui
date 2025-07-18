@@ -15,5 +15,6 @@ class AppAssets {
   static const String sendIcon = 'assets/icons/Send.svg';
   static const String walletSolidIcon = 'assets/icons/Wallet_Solid.svg';
   static const String contactIcon = 'assets/icons/Contact.svg';
+  static const String visaIcon = 'assets/icons/Visa.svg';
 
 }
