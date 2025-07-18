@@ -1,13 +1,7 @@
-import 'package:finance_app_ui/core/features/auth/widgets/custom_back_button_widget.dart';
-import 'package:finance_app_ui/core/features/main_screen/widgets/carousel_card_widget.dart';
 import 'package:finance_app_ui/core/features/main_screen/widgets/custom_app_bar.dart';
 import 'package:finance_app_ui/core/features/main_screen/widgets/custom_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-
-import '../../routing/app_routes.dart';
-import '../../styling/app_colors.dart';
 
 class MyCards extends StatelessWidget {
   const MyCards({super.key});

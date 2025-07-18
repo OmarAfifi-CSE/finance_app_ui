@@ -11,6 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   final IconData? leadingIcon;
   final IconData? actionsIcon;
   final double height;
+  final bool isSvg;
 
   const CustomAppBar({
     super.key,
@@ -18,6 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
     this.leadingIcon = Icons.arrow_back_ios_new_rounded,
     this.actionsIcon,
     this.height = 80.0,
+    this.isSvg = false,
   });
   @override
   Size get preferredSize => Size.fromHeight(height);
@@ -63,6 +65,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
                 borderRadius: 40.r,
                 iconColor: AppColors.blackColor,
                 iconSize: 30.sp,
+                isSvg: isSvg,
                 onPressed: () {
                   // Define your action here
                 },

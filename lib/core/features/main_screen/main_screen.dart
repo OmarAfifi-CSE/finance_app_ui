@@ -1,6 +1,7 @@
 import 'package:finance_app_ui/core/features/auth/login_screen.dart';
 import 'package:finance_app_ui/core/features/auth/register_screen.dart';
 import 'package:finance_app_ui/core/features/main_screen/home_screen.dart';
+import 'package:finance_app_ui/core/features/main_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -23,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
     RegisterScreen(),
     LoginScreen(),
     MyCards(),
-    LoginScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -31,7 +32,6 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: SafeArea(child: screens[currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
-
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {

@@ -16,5 +16,6 @@ class AppAssets {
   static const String walletSolidIcon = 'assets/icons/Wallet_Solid.svg';
   static const String contactIcon = 'assets/icons/Contact.svg';
   static const String visaIcon = 'assets/icons/Visa.svg';
+  static const String editSquareIcon = 'assets/icons/Edit-Square.svg';
 
 }
