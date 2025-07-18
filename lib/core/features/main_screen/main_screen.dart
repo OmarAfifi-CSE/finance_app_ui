@@ -18,7 +18,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
   List<Widget> screens = [
-    LoginScreen(),
+    HomeScreen(),
     RegisterScreen(),
     LoginScreen(),
     LoginScreen(),
@@ -28,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[currentIndex],
+      body: SafeArea(child: screens[currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
 
         currentIndex: currentIndex,
