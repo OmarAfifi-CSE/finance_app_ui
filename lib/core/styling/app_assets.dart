@@ -11,5 +11,9 @@ class AppAssets {
   static const String profileIcon = 'assets/icons/Profile.svg';
   static const String userIcon = 'assets/icons/Omar.png';
   static const String notificationIcon = 'assets/icons/Notification.svg';
+  static const String ellipseImage = 'assets/images/Ellipse.svg';
+  static const String sendIcon = 'assets/icons/Send.svg';
+  static const String walletSolidIcon = 'assets/icons/Wallet_Solid.svg';
+  static const String contactIcon = 'assets/icons/Contact.svg';
 
 }
