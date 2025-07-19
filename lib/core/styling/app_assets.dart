@@ -17,5 +17,7 @@ class AppAssets {
   static const String contactIcon = 'assets/icons/Contact.svg';
   static const String visaIcon = 'assets/icons/Visa.svg';
   static const String editSquareIcon = 'assets/icons/Edit-Square.svg';
+  static const String downloadIcon = 'assets/icons/Download.svg';
+  static const String uploadIcon = 'assets/icons/Upload.svg';
 
 }

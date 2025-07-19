@@ -1,5 +1,4 @@
 import 'package:finance_app_ui/core/features/auth/login_screen.dart';
-import 'package:finance_app_ui/core/features/auth/register_screen.dart';
 import 'package:finance_app_ui/core/features/main_screen/home_screen.dart';
 import 'package:finance_app_ui/core/features/main_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../styling/app_assets.dart';
 import '../../styling/app_colors.dart';
 import 'my_cards.dart';
+import 'statistics_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
   List<Widget> screens = [
     HomeScreen(),
-    RegisterScreen(),
+    StatisticsScreen(),
     LoginScreen(),
     MyCards(),
     ProfileScreen(),
@@ -30,7 +30,9 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: screens[currentIndex]),
+      body: SafeArea(
+        child: IndexedStack(index: currentIndex, children: screens),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (index) {

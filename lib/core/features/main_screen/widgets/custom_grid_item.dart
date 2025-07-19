@@ -31,6 +31,7 @@ class CustomGridItem extends StatelessWidget {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CustomIconButton(
             iconPath: iconPath ?? AppAssets.sendIcon,
