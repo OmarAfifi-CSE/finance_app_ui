@@ -40,7 +40,7 @@ class OnboardingScreen extends StatelessWidget {
               SizedBox(height: 46.h),
               GestureDetector(
                 onTap: () {
-                  // Handle guest login action
+                  context.pushNamed(AppRoutes.mainScreen);
                 },
                 child: Text(
                   "Continue as a guest",
