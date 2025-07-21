@@ -12,35 +12,37 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: 'My Profile', isSvg: true),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(height: 20.h),
-              SizedBox(
-                width: 150.w,
-                height: 150.h,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage(AppAssets.userIcon),
-                  backgroundColor: Colors.transparent,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(height: 20.h),
+                SizedBox(
+                  width: 150.w,
+                  height: 150.h,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage(AppAssets.userIcon),
+                    backgroundColor: Colors.transparent,
+                  ),
                 ),
-              ),
-              SizedBox(height: 12.h),
-              CustomProfileInfoTile(label: 'Name', value: 'Omar Afifi'),
-              SizedBox(height: 16.h),
-              CustomProfileInfoTile(
-                label: 'Email',
-                value: 'omarafifi.cse@gmail.com',
-              ),
-              SizedBox(height: 16.h),
-              CustomProfileInfoTile(
-                label: 'Phone Number',
-                value: '+20 123 456 7890',
-              ),
-              SizedBox(height: 16.h),
-              CustomProfileInfoTile(label: 'Address', value: 'Cairo, Egypt'),
-            ],
+                SizedBox(height: 12.h),
+                CustomProfileInfoTile(label: 'Name', value: 'Omar Afifi'),
+                SizedBox(height: 16.h),
+                CustomProfileInfoTile(
+                  label: 'Email',
+                  value: 'omarafifi.cse@gmail.com',
+                ),
+                SizedBox(height: 16.h),
+                CustomProfileInfoTile(
+                  label: 'Phone Number',
+                  value: '+20 123 456 7890',
+                ),
+                SizedBox(height: 16.h),
+                CustomProfileInfoTile(label: 'Address', value: 'Cairo, Egypt'),
+              ],
+            ),
           ),
         ),
       ),

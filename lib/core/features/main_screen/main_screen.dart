@@ -18,7 +18,9 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int currentIndex = 0;
+  // Controller to manage the PageView's state
+  late PageController _pageController;
+  int _currentIndex = 0;
   List<Widget> screens = [
     HomeScreen(),
     StatisticsScreen(),
@@ -28,16 +30,39 @@ class _MainScreenState extends State<MainScreen> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _currentIndex);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  void onPageChanged(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: IndexedStack(index: currentIndex, children: screens),
+        child: PageView(
+          controller: _pageController,
+          onPageChanged: onPageChanged,
+          padEnds: true,
+          children: screens,
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
+        currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
-            currentIndex = index;
+            _pageController.jumpToPage(index);
           });
         },
         type: BottomNavigationBarType.fixed,
@@ -51,7 +76,7 @@ class _MainScreenState extends State<MainScreen> {
               AppAssets.homeIcon,
               width: 30.sp,
               height: 30.sp,
-              colorFilter: currentIndex == 0
+              colorFilter: _currentIndex == 0
                   ? ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn)
                   : ColorFilter.mode(AppColors.grayColor, BlendMode.srcIn),
             ),
@@ -62,7 +87,7 @@ class _MainScreenState extends State<MainScreen> {
               AppAssets.chartIcon,
               width: 30.sp,
               height: 30.sp,
-              colorFilter: currentIndex == 1
+              colorFilter: _currentIndex == 1
                   ? ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn)
                   : ColorFilter.mode(AppColors.grayColor, BlendMode.srcIn),
             ),
@@ -103,7 +128,7 @@ class _MainScreenState extends State<MainScreen> {
               AppAssets.walletIcon,
               width: 30.sp,
               height: 30.sp,
-              colorFilter: currentIndex == 3
+              colorFilter: _currentIndex == 3
                   ? ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn)
                   : ColorFilter.mode(AppColors.grayColor, BlendMode.srcIn),
             ),
@@ -114,7 +139,7 @@ class _MainScreenState extends State<MainScreen> {
               AppAssets.profileIcon,
               width: 30.sp,
               height: 30.sp,
-              colorFilter: currentIndex == 4
+              colorFilter: _currentIndex == 4
                   ? ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn)
                   : ColorFilter.mode(AppColors.grayColor, BlendMode.srcIn),
             ),
