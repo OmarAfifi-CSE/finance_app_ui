@@ -27,7 +27,7 @@ class OnboardingScreen extends StatelessWidget {
               PrimaryButtonWidget(
                 buttonText: "Login",
                 onPressed: () {
-                  GoRouter.of(context).pushNamed(AppRoutes.mainScreen);
+                  GoRouter.of(context).pushNamed(AppRoutes.loginScreen);
                 },
               ),
               SizedBox(height: 15.h),

@@ -1,7 +1,9 @@
 import 'package:finance_app_ui/core/features/main_screen/widgets/custom_app_bar.dart';
 import 'package:finance_app_ui/core/features/main_screen/widgets/custom_profile_info_tile.dart';
+import 'package:finance_app_ui/core/widgets/primary_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../styling/app_assets.dart';
 
@@ -41,6 +43,10 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 16.h),
                 CustomProfileInfoTile(label: 'Address', value: 'Cairo, Egypt'),
+                SizedBox(height: 16.h),
+                PrimaryButtonWidget(buttonText: 'Log out',onPressed: (){
+                  GoRouter.of(context).pop();
+                },)
               ],
             ),
           ),
